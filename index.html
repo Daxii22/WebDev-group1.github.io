@@ -1,1117 +1,322 @@
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restaurant Menu</title>
-    <link rel="stylesheet" href="style3.css">
-    <style>
-        /* Style for the modal */
-       .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgb(0,0,0);
-            background-color: rgba(0,0,0,0.9);
-            padding-right: 15px;
-        }
-        
-        .modal-content {
-            margin: auto;
-            display: block;
-            width: 80%;
-            max-width: 700px;
-        }
-       #caption {
-            margin: auto;
-            display: block;
-            width: 80%;
-            max-width: 700px;
-            text-align: center;
-            color: #ccc;
-            padding: 10px 0;
-            height: 150px;
-        }
-        .close {
-            position: absolute;
-            top: 15px;
-            right: 35px;
-            color: #f1f1f1;
-            font-size: 40px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-        .close:hover,
-        .close:focus {
-            color: #bbb;
-            text-decoration: none;
-            cursor: pointer;
-        }
-        .menu-item img {
-            margin-left: 3px;
-            width: 24.5%;
-            height: 200px;
-            object-fit: cover;
-        }
-        @media screen and (max-width: 768px) {
-            .menu-item img {
-                width: 48%;
-                margin-bottom: 10px;
-            }
-        }
-        @media screen and (max-width: 480px) {
-            .menu-item img {
-                width: 100%;
-            }
-        }
-        /* Add these new styles */
-        .header-top {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 1rem;
-            background-color: #f8f8f8;
-        }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>FoodyCMR</title>
+  </head>
+  <body>
+    <nav>
+      <div class="nav__header">
+        <div class="logo nav__logo">
+          <a href="#">Foody<span>CMR.</span></a>
+        </div>
+        <div class="nav_menu_btn" id="menu-btn">
+          <span><i class="ri-menu-line"></i></span>
+        </div>
+      </div>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#special">Menu</a></li>
+        <li><a href="#chef">Board</a></li>
+        <li><a href="#client">Reviews</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+      <div class="nav__btn">
+        <button class="btn"><img src="images\restaurant-line.png"></button>
+      </div>
+    </nav>
+    <header class="section_container header_container" id="home">
+      <div class="header__image">
+        <img src="images\achu.jpeg" alt="header"/>
+      </div>
+      <br>
+        <br>
+      <div class="header__content">
+        <h1><center>Meet, Eat & Enjoy Cameroon's <span>True Tastes</span>.</center></h1>
+        <p class="section__description"><center>
+          Discover the true essence of an African cuisine as you meet, eat, and
+          savor the authentic flavors that can only be found in Cameroon.
+      </center>
+        </p>
+        <br>
+        <br>
+        <div class="header__btn"><center>
+          <button class="btn">Get Started</button>
+          </center>
+        </div>
+      </div>
+    </header>
+    <br>
+    <br>
 
-        .search-container {
-            display: flex;
-            align-items: center;
-            max-width: 400px;
-            width: 100%;
-            margin: 0 1rem;
-        }
+    <section class="section_container special_container" id="special">
+      <h2 class="section__header">Our Special Dish</h2>
+      <p class="section__description">
+        Each dish promises an unforgettable dining experience, blending
+        innovation and tradition to delight your senses and excite your belly.
+      </p>
+      <div class="special__grid">
+        <div class="special__card">
+          <img src="images\fish.jpeg" alt="special" />
+          <h4>Grilled Fish and Bobolo</h4>
+          <p>
+            Fresh fish simmered in aromatic curry sauce with mixed veggies
+            like plantain, and cassava mold, flavorful dish. Served with a chilled bottle of natural cocktail juice
+          </p>
+          <div class="special__ratings">
+            <span><i class="ri-star-fill"></i></span>
+            <span><i class="ri-star-fill"></i></span>
+            <span><i class="ri-star-fill"></i></span>
+            <span><i class="ri-star-fill"></i></span>
+            <span><i class="ri-star-fill"></i></span>
+          </div>
+          <div class="special__footer">
+            <p class="price">5000xaf</p>
+            <button class="btn">Add to Cart</button>
+          </div>
+        </div>
+        <div class="special__card">
+          <img src="images\achu.jpeg" alt="special" />
+          <h4>Prestiguous Achu</h4>
+          <p>
+            This is a meal with a great historical b ackground commonly marked by the north westerners. It consist of the Achu, a yellow soup and garnished with alot of proteins. Together is makes this meal prestigious
+          </p>
+          <div class="special__ratings">
+            <span><i class="ri-star-fill"></i></span>
+            <span><i class="ri-star-fill"></i></span>
+            <span><i class="ri-star-fill"></i></span>
+            <span><i class="ri-star-fill"></i></span>
+            <span><i class="ri-star-fill"></i></span>
+          </div>
+          <div class="special__footer">
+            <p class="price">7000xaf</p>
+            <button class="btn">Add to Cart</button>
+          </div>
+        </div>
+        <div class="special__card">
+          <img src="images\eru.jpeg" alt="special" />
+          <h4>Garri/Fufu and Eru</h4>
+          <p>
+            A meal common to the bakweri tribe which is simply a savorous delicacy
+          </p>
+          <div class="special__ratings">
+            <span><i class="ri-star-fill"></i></span>
+            <span><i class="ri-star-fill"></i></span>
+            <span><i class="ri-star-fill"></i></span>
+            <span><i class="ri-star-fill"></i></span>
+            <span><i class="ri-star-fill"></i></span>
+          </div>
+          <div class="special__footer">
+            <p class="price">2500xaf</p>
+            <button class="btn">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    	 <br>
+    <br>
+    <section class="section_container explore_container">
+      <div class="explore__image">
+        <img src="images\hotp.jpeg" alt="explore" />
+      </div>
+      <div class="explore__content">
+        <h1 class="section__header">We Serve Healthy & Tasty Food, indeed we are reliable!</h1>
+        <p class="section__description">
+          Indulge guilt-free with our commitment to serving wholesome and
+          delicious meals. Explore a menu carefully made to balance taste and
+          nutrition, ensuring every bite is both satisfying and nourishing.
+        </p>
+        <div class="explore__btn">
+          <button class="btn">
+            Explore Story <span><i class="ri-arrow-right-line"></i></span>
+          </button>
+        </div>
+      </div>
+    </section>
 
-        #search {
-            width: 100%;
-            padding: 10px 15px;
-            border: 2px solid #ddd;
-            border-radius: 20px 0 0 20px;
-            outline: none;
-            font-size: 16px;
-        }
+    <section class="section_container banner_container">
+      <div class="banner__card">
+        <span class="banner__icon"><i class="ri-bowl-fill"></i></span>
+        <h4>Order Your Food</h4>
+        <p>
+          Seamlessly place your food orders online with just a few clicks. Enjoy
+          convenience and efficiency as you select from our diverse menu of
+          delectable indeginous dishes.
+        </p>
+        <a href="#">
+          Read more
+          <span><i class="ri-arrow-right-line"></i></span>
+        </a>
+      </div>
+      <div class="banner__card">
+        <span class="banner__icon"><i class="ri-truck-fill"></i></span>
+        <h4>Reservation</h4>
+        <p>
+          Do a reservation right away and get a taste of any esquisite cameroon dish of your choice.
+          hurry up!!
+        </p>
+        <a href="#">
+          Read more
+          <span><i class="ri-arrow-right-line"></i></span>
+        </a>
+      </div>
+      <div class="banner__card">
+        <span class="banner__icon"><i class="ri-star-smile-fill"></i></span>
+        <h4>Your Favorites</h4>
+        <p>
+          Sit back, relax, and just select what dish you desire to eat from your list of favorite meals.
+        </p>
+        <a href="#">
+          Read more
+          <span><i class="ri-arrow-right-line"></i></span>
+        </a>
+      </div>
+    </section>
 
-        #search:focus {
-            border-color: #666;
-        }
+    <section class="chef" id="chef">
+      <img src="assets/topping.png" alt="topping" class="chef__bg" />
+      <div class="section_container chef_container">
+        <div class="chef__image">
+          <img src="assets/chef.png" alt="chef" />
+        </div>
+        <div class="chef__content">
+          <h2 class="section__header">Cooked By The Best Chefs In The World</h2>
+          <p class="section__description">
+            Experience culinary excellence crafted by master chefs from across
+            the 10 regions of Cameroon. Our team of culinary professionals brings together expertise,
+            innovation, and passion to create unforgettable dining experiences
+            that redefine gastronomy.
+          </p>
+          <ul class="chef__list">
+            <li>
+              <span><i class="ri-checkbox-fill"></i></span>
+              Savour culinary brilliance from master chefs worldwide.
+            </li>
+            <li>
+              <span><i class="ri-checkbox-fill"></i></span>
+              Experience innovative creations with attention to detail.
+            </li>
+            <li>
+              <span><i class="ri-checkbox-fill"></i></span>
+              Enjoy dishes crafted with an unwavering passion for perfection.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-        .search-button {
-           /* background: #333;*/
-            border: none;
-            padding: 10px 15px;
-            border-radius: 0 20px 20px 0;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-        }
-
-        .search-button svg {
-            fill: white;
-        }
-
-        .search-button:hover {
-            background: #555;
-        }
-
-        /* Hide the original search help text but keep it for screen readers */
-        #search-help {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            border: 0;
-        }
-
-        @media screen and (max-width: 768px) {
-            .header-top {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .search-container {
-                margin: 1rem 0;
-            }
-        }
-
-        /* Add background image styles */
-        body {
-            background-color: #f5f5f5; /* Light gray background instead */
-            margin: 0;
-            padding: 0;
-        }
-
-        /* Add a wrapper for content */
-        .content-wrapper {
-            background-color: #ffffff; /* Solid white background */
-            padding: 20px;
-            margin: 0 auto;
-            max-width: 1200px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Update header styles */
-        .header-top {
-            background-color: rgba(248, 248, 248, 0.95);
-            padding: 1rem;
-            margin-bottom: 20px;
-            border-radius: 8px;
-        }
-
-        /* Update menu item styles for better responsiveness */
-        .menu-item {
-            background-color: white;
-            border-radius: 8px;
-            padding: 15px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .menu-item img {
-            margin-left: 0;
-            margin-right: 3px;
-            margin-bottom: 3px;
-            width: 24%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 4px;
-            transition: transform 0.3s ease;
-        }
-
-        .menu-item img:hover {
-            transform: scale(1.05);
-            cursor: pointer;
-        }
-
-        /* Update responsive breakpoints */
-        @media screen and (max-width: 768px) {
-            .menu-item img {
-                width: 48%;
-                height: 180px;
-            }
-            
-            .search-container {
-                width: 90%;
-            }
-        }
-
-        @media screen and (max-width: 480px) {
-            .menu-item img {
-                width: 100%;
-                height: 200px;
-                margin-right: 0;
-            }
-
-            .menu-item {
-                padding: 10px;
-            }
-
-            .header-top h1 {
-                font-size: 24px;
-            }
-        }
-
-        /* Update modal styles for better mobile experience */
-        .modal-content {
-            width: 95%;
-            max-width: 800px;
-            border-radius: 8px;
-        }
-
-        /* Add styles for better button appearance */
-        button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        button:hover {
-            background-color: #45a049;
-        }
-
-        /* Add this to prevent page shift when modal opens */
-        body.modal-open {
-            overflow: hidden;
-            padding-right: 15px;
-        }
-
-        /* Update background image container styles */
-        .background-slideshow {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            overflow: hidden;
-        }
-
-        .background-image {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            transition: opacity 2s ease-in-out;
-            object-fit: cover;
-            /* Increase blur effect */
-            filter: blur(15px);
-            -webkit-filter: blur(15px);
-            /* Scale up more to prevent blur edges */
-            transform: scale(1.2);
-        }
-
-        .background-image.active {
-            opacity: 1;
-        }
-
-        /* Update content wrapper for better contrast with blurred background */
-        .content-wrapper {
-            background-color: rgba(255, 255, 255, 0.97); /* Slightly more opaque */
-            padding: 20px;
-            margin: 20px auto;
-            max-width: 1200px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-            position: relative;
-            border-radius: 10px;
-        }
-
-        /* Add styles for the add-ons modal */
-        .add-ons-modal {
-            display: none;
-            position: fixed;
-            z-index: 2;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.5);
-        }
-
-        .add-ons-content {
-            background-color: #fff;
-            margin: 15% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-            max-width: 600px;
-            border-radius: 8px;
-        }
-
-        .add-ons-options label {
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        .add-ons-options input[type="checkbox"] {
-            margin-right: 5px;
-        }
-
-        .add-ons-buttons {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
-        }
-
-        .add-ons-buttons button {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .add-ons-buttons button:hover {
-            background-color: #45a049;
-        }
-
-        .special-instructions {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            margin-top: 10px;
-        }
-
-        .add-on-select-group {
-            margin-bottom: 15px;
-        }
-
-        .add-on-select {
-            width: 100%;
-            padding: 8px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            margin-top: 5px;
-            font-size: 14px;
-        }
-
-        .add-on-select:focus {
-            border-color: #4CAF50;
-            outline: none;
-        }
-
-        .special-instructions-group {
-            margin-top: 15px;
-        }
-
-        .special-instructions-group label {
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        .special-instructions {
-            width: 100%;
-            padding: 8px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            min-height: 60px;
-            margin-top: 5px;
-            font-family: inherit;
-        }
-
-        .special-instructions:focus {
-            border-color: #4CAF50;
-            outline: none;
-        }
-    </style>
-</head>
-<body>
-    <div class="background-slideshow">
-        <img src="image2.JPG" alt="" class="background-image active">
-        <img src="image3.JPG" alt="" class="background-image">
-    </div>
-
-    <div class="content-wrapper">
-        <header>
-            <div class="header-top">
-                <!--<h1>Restaurant Name</h1>
-            -->
-                <form role="search" class="search-container" onsubmit="event.preventDefault(); searchMenu();">
-                    <input type="text" 
-                           id="search" 
-                           name="search" 
-                           aria-label="Search menu items"
-                           onkeyup="searchMenu()" 
-                           placeholder="Search menu items...">
-                    <button type="submit" class="search-button" aria-label="Search">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                            <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
-                        </svg>
-                    </button>
-                </form>
+    <section class="section_container client_container" id="client">
+      <h2 class="section__header">What Our Customers Are Saying</h2>
+      <p class="section__description">
+        Discover firsthand experiences and testimonials from our valued patrons.
+        Explore the feedback and reviews that showcase our commitment to
+        quality, service, and customer satisfaction.
+      </p>
+      <div class="client__swiper">
+        <!-- Slider main container -->
+        <div class="swiper">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+              <div class="client__card">
+                <p>
+                  FoodyCMR's culinary expertise never fails to impress! Every
+                  dish is a masterpiece, bursting with flavor and freshness.
+                </p>
+                <img src="assets/client-1.jpg" alt="client" />
+                <h4>David Lee</h4>
+                <h5>Business Executive</h5>
+              </div>
             </div>
-            <nav aria-label="Main navigation">
-                <!--
-                <ul>
-                   <li><a href="#appetizers" aria-label="Appetizers">Appetizers</a></li>
-                    <li><a href="#entrees" aria-label="Entrees">Entrees</a></li>
-                    <li><a href="#desserts" aria-label="Desserts">Desserts</a></li>
-                </ul>
-            -->
-            </nav>
-        </header>
-
-        <section id="menu" aria-label="Restaurant Menu">
-            <h2>Menu</h2>
-            <div id="appetizers" class="category">
-                <h3>Appetizers</h3>
-                <div class="menu-item">
-                    <img src="App.jpg" alt="Spring Rolls" onclick="openModal(this)" onerror="handleImageError(this)">
-                    <img src="App.jpg" alt="Spring Rolls" onclick="openModal(this)" onerror="handleImageError(this)">
-                    <img src="App.jpg" alt="Spring Rolls" onclick="openModal(this)" onerror="handleImageError(this)">
-                    <img src="App.jpg" alt="Spring Rolls" onclick="openModal(this)" onerror="handleImageError(this)">
-                    <h4>Spring Rolls</h4>
-                    <p>Description: Crispy rolls with vegetables.</p>
-                    <p>Price: $5.00</p>
-                    <button onclick="addToCart('Spring Rolls')">Add to Cart</button>
-                    <button onclick="showAddOns(this)" class="add-ons-btn">Add-ons</button>
-                    <div class="add-ons-modal">
-                        <div class="add-ons-content">
-                            <h5>Select Add-ons</h5>
-                            <div class="add-ons-options">
-                                <div class="add-on-select-group">
-                                    <label for="sauce">Sauce Options:</label>
-                                    <select id="sauce" class="add-on-select">
-                                        <option value="">No extra sauce</option>
-                                        <option value="Extra Sauce" data-price="1.00">Extra Sauce (+$1.00)</option>
-                                        <option value="Special Sauce" data-price="1.50">Special Sauce (+$1.50)</option>
-                                    </select>
-                                </div>
-                                
-                                <div class="add-on-select-group">
-                                    <label for="portion">Portion Size:</label>
-                                    <select id="portion" class="add-on-select">
-                                        <option value="">Regular portion</option>
-                                        <option value="Double Portion" data-price="3.00">Double Portion (+$3.00)</option>
-                                        <option value="Triple Portion" data-price="5.00">Triple Portion (+$5.00)</option>
-                                    </select>
-                                </div>
-                                
-                                <div class="add-on-select-group">
-                                    <label for="extras">Extra Toppings:</label>
-                                    <select id="extras" class="add-on-select">
-                                        <option value="">No extras</option>
-                                        <option value="Extra Cheese" data-price="1.50">Extra Cheese (+$1.50)</option>
-                                        <option value="Premium Toppings" data-price="2.00">Premium Toppings (+$2.00)</option>
-                                    </select>
-                                </div>
-                                
-                                <div class="special-instructions-group">
-                                    <label for="special-instructions">Special Instructions:</label>
-                                    <textarea id="special-instructions" class="special-instructions" 
-                                              placeholder="Enter any special instructions or requests..."></textarea>
-                                </div>
-                            </div>
-                            <div class="add-ons-buttons">
-                                <button onclick="confirmAddOns(this)">Confirm</button>
-                                <button onclick="closeAddOns(this)">Cancel</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    
-                    <img src="image9.jpg" alt="Garlic Bread" onclick="openModal(this)" onerror="handleImageError(this)">
-                    <img src="image9.jpg" alt="Garlic Bread" onclick="openModal(this)" onerror="handleImageError(this)">
-                    <img src="image9.jpg" alt="Garlic Bread" onclick="openModal(this)" onerror="handleImageError(this)">
-                    <img src="garlic_bread.jpg" alt="Garlic Bread" onclick="openModal(this)" onerror="handleImageError(this)">
-                    <h4>Garlic Bread</h4>
-                    <p>Description: Toasted bread with garlic butter.</p>
-                    <p>Price: $4.50</p>
-                    <button onclick="addToCart('Garlic Bread')">Add to Cart</button>
-                    <button onclick="showAddOns(this)" class="add-ons-btn">Add-ons</button>
-                    <div class="add-ons-modal">
-                        <div class="add-ons-content">
-                            <h5>Select Add-ons</h5>
-                            <div class="add-ons-options">
-                                <div class="add-on-select-group">
-                                    <label for="sauce">Sauce Options:</label>
-                                    <select id="sauce" class="add-on-select">
-                                        <option value="">No extra sauce</option>
-                                        <option value="Extra Sauce" data-price="1.00">Extra Sauce (+$1.00)</option>
-                                        <option value="Special Sauce" data-price="1.50">Special Sauce (+$1.50)</option>
-                                    </select>
-                                </div>
-                                
-                                <div class="add-on-select-group">
-                                    <label for="portion">Portion Size:</label>
-                                    <select id="portion" class="add-on-select">
-                                        <option value="">Regular portion</option>
-                                        <option value="Double Portion" data-price="3.00">Double Portion (+$3.00)</option>
-                                        <option value="Triple Portion" data-price="5.00">Triple Portion (+$5.00)</option>
-                                    </select>
-                                </div>
-                                
-                                <div class="add-on-select-group">
-                                    <label for="extras">Extra Toppings:</label>
-                                    <select id="extras" class="add-on-select">
-                                        <option value="">No extras</option>
-                                        <option value="Extra Cheese" data-price="1.50">Extra Cheese (+$1.50)</option>
-                                        <option value="Premium Toppings" data-price="2.00">Premium Toppings (+$2.00)</option>
-                                    </select>
-                                </div>
-                                
-                                <div class="special-instructions-group">
-                                    <label for="special-instructions">Special Instructions:</label>
-                                    <textarea id="special-instructions" class="special-instructions" 
-                                              placeholder="Enter any special instructions or requests..."></textarea>
-                                </div>
-                            </div>
-                            <div class="add-ons-buttons">
-                                <button onclick="confirmAddOns(this)">Confirm</button>
-                                <button onclick="closeAddOns(this)">Cancel</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <img src="caprese_salad.jpg" alt="Caprese Salad" onclick="openModal(this)" onerror="handleImageError(this)">
-                    <h4>Caprese Salad</h4>
-                    <p>Description: Fresh tomatoes, mozzarella, and basil.</p>
-                    <p>Price: $6.00</p>
-                    <button onclick="addToCart('Caprese Salad')">Add to Cart</button>
-                    <button onclick="showAddOns(this)" class="add-ons-btn">Add-ons</button>
-                    <div class="add-ons-modal">
-                        <div class="add-ons-content">
-                            <h5>Select Add-ons</h5>
-                            <div class="add-ons-options">
-                                <div class="add-on-select-group">
-                                    <label for="sauce">Sauce Options:</label>
-                                    <select id="sauce" class="add-on-select">
-                                        <option value="">No extra sauce</option>
-                                        <option value="Extra Sauce" data-price="1.00">Extra Sauce (+$1.00)</option>
-                                        <option value="Special Sauce" data-price="1.50">Special Sauce (+$1.50)</option>
-                                    </select>
-                                </div>
-                                
-                                <div class="add-on-select-group">
-                                    <label for="portion">Portion Size:</label>
-                                    <select id="portion" class="add-on-select">
-                                        <option value="">Regular portion</option>
-                                        <option value="Double Portion" data-price="3.00">Double Portion (+$3.00)</option>
-                                        <option value="Triple Portion" data-price="5.00">Triple Portion (+$5.00)</option>
-                                    </select>
-                                </div>
-                                
-                                <div class="add-on-select-group">
-                                    <label for="extras">Extra Toppings:</label>
-                                    <select id="extras" class="add-on-select">
-                                        <option value="">No extras</option>
-                                        <option value="Extra Cheese" data-price="1.50">Extra Cheese (+$1.50)</option>
-                                        <option value="Premium Toppings" data-price="2.00">Premium Toppings (+$2.00)</option>
-                                    </select>
-                                </div>
-                                
-                                <div class="special-instructions-group">
-                                    <label for="special-instructions">Special Instructions:</label>
-                                    <textarea id="special-instructions" class="special-instructions" 
-                                              placeholder="Enter any special instructions or requests..."></textarea>
-                                </div>
-                            </div>
-                            <div class="add-ons-buttons">
-                                <button onclick="confirmAddOns(this)">Confirm</button>
-                                <button onclick="closeAddOns(this)">Cancel</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="swiper-slide">
+              <div class="client__card">
+                <p>
+                  I always turn to FoodyCMR for a quick and delicious meal. Their
+                  efficient service and mouthwatering options never disappoint!
+                </p>
+                <img src="assets/client-2.jpg" alt="client" />
+                <h4>Emily Johnson</h4>
+                <h5>Food Blogger</h5>
+              </div>
             </div>
-
-            <div id="entrees" class="category">
-                <h3>Entrees</h3>
-                <div class="menu-item">
-                    <img src="grilled_chicken.jpg" alt="Grilled Chicken" onclick="openModal(this)" onerror="handleImageError(this)">
-                    <h4>Grilled Chicken</h4>
-                    <p>Description: Juicy grilled chicken with herbs.</p>
-                    <p>Price: $12.00</p>
-                    <button onclick="addToCart('Grilled Chicken')">Add to Cart</button>
-                    <button onclick="showAddOns(this)" class="add-ons-btn">Add-ons</button>
-                    <div class="add-ons-modal">
-                        <div class="add-ons-content">
-                            <h5>Select Add-ons</h5>
-                            <div class="add-ons-options">
-                                <div class="add-on-select-group">
-                                    <label for="sauce">Sauce Options:</label>
-                                    <select id="sauce" class="add-on-select">
-                                        <option value="">No extra sauce</option>
-                                        <option value="Extra Sauce" data-price="1.00">Extra Sauce (+$1.00)</option>
-                                        <option value="Special Sauce" data-price="1.50">Special Sauce (+$1.50)</option>
-                                    </select>
-                                </div>
-                                
-                                <div class="add-on-select-group">
-                                    <label for="portion">Portion Size:</label>
-                                    <select id="portion" class="add-on-select">
-                                        <option value="">Regular portion</option>
-                                        <option value="Double Portion" data-price="3.00">Double Portion (+$3.00)</option>
-                                        <option value="Triple Portion" data-price="5.00">Triple Portion (+$5.00)</option>
-                                    </select>
-                                </div>
-                                
-                                <div class="add-on-select-group">
-                                    <label for="extras">Extra Toppings:</label>
-                                    <select id="extras" class="add-on-select">
-                                        <option value="">No extras</option>
-                                        <option value="Extra Cheese" data-price="1.50">Extra Cheese (+$1.50)</option>
-                                        <option value="Premium Toppings" data-price="2.00">Premium Toppings (+$2.00)</option>
-                                    </select>
-                                </div>
-                                
-                                <div class="special-instructions-group">
-                                    <label for="special-instructions">Special Instructions:</label>
-                                    <textarea id="special-instructions" class="special-instructions" 
-                                              placeholder="Enter any special instructions or requests..."></textarea>
-                                </div>
-                            </div>
-                            <div class="add-ons-buttons">
-                                <button onclick="confirmAddOns(this)">Confirm</button>
-                                <button onclick="closeAddOns(this)">Cancel</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <img src="beef_stir_fry.jpg" alt="Beef Stir Fry" onclick="openModal(this)" onerror="handleImageError(this)">
-                    <h4>Beef Stir Fry</h4>
-                    <p>Description: Tender beef with vegetables in a savory sauce.</p>
-                    <p>Price: $14.00</p>
-                    <button onclick="addToCart('Beef Stir Fry')">Add to Cart</button>
-                    <button onclick="showAddOns(this)" class="add-ons-btn">Add-ons</button>
-                    <div class="add-ons-modal">
-                        <div class="add-ons-content">
-                            <h5>Select Add-ons</h5>
-                            <div class="add-ons-options">
-                                <div class="add-on-select-group">
-                                    <label for="sauce">Sauce Options:</label>
-                                    <select id="sauce" class="add-on-select">
-                                        <option value="">No extra sauce</option>
-                                        <option value="Extra Sauce" data-price="1.00">Extra Sauce (+$1.00)</option>
-                                        <option value="Special Sauce" data-price="1.50">Special Sauce (+$1.50)</option>
-                                    </select>
-                                </div>
-                                
-                                <div class="add-on-select-group">
-                                    <label for="portion">Portion Size:</label>
-                                    <select id="portion" class="add-on-select">
-                                        <option value="">Regular portion</option>
-                                        <option value="Double Portion" data-price="3.00">Double Portion (+$3.00)</option>
-                                        <option value="Triple Portion" data-price="5.00">Triple Portion (+$5.00)</option>
-                                    </select>
-                                </div>
-                                
-                                <div class="add-on-select-group">
-                                    <label for="extras">Extra Toppings:</label>
-                                    <select id="extras" class="add-on-select">
-                                        <option value="">No extras</option>
-                                        <option value="Extra Cheese" data-price="1.50">Extra Cheese (+$1.50)</option>
-                                        <option value="Premium Toppings" data-price="2.00">Premium Toppings (+$2.00)</option>
-                                    </select>
-                                </div>
-                                
-                                <div class="special-instructions-group">
-                                    <label for="special-instructions">Special Instructions:</label>
-                                    <textarea id="special-instructions" class="special-instructions" 
-                                              placeholder="Enter any special instructions or requests..."></textarea>
-                                </div>
-                            </div>
-                            <div class="add-ons-buttons">
-                                <button onclick="confirmAddOns(this)">Confirm</button>
-                                <button onclick="closeAddOns(this)">Cancel</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <img src="vegetarian_pasta.jpg" alt="Vegetarian Pasta" onclick="openModal(this)" onerror="handleImageError(this)">
-                    <h4>Vegetarian Pasta</h4>
-                    <p>Description: Penne with seasonal vegetables in marinara sauce.</p>
-                    <p>Price: $11.00</p>
-                    <button onclick="addToCart('Vegetarian Pasta')">Add to Cart</button>
-                    <button onclick="showAddOns(this)" class="add-ons-btn">Add-ons</button>
-                    <div class="add-ons-modal">
-                        <div class="add-ons-content">
-                            <h5>Select Add-ons</h5>
-                            <div class="add-ons-options">
-                                <div class="add-on-select-group">
-                                    <label for="sauce">Sauce Options:</label>
-                                    <select id="sauce" class="add-on-select">
-                                        <option value="">No extra sauce</option>
-                                        <option value="Extra Sauce" data-price="1.00">Extra Sauce (+$1.00)</option>
-                                        <option value="Special Sauce" data-price="1.50">Special Sauce (+$1.50)</option>
-                                    </select>
-                                </div>
-                                
-                                <div class="add-on-select-group">
-                                    <label for="portion">Portion Size:</label>
-                                    <select id="portion" class="add-on-select">
-                                        <option value="">Regular portion</option>
-                                        <option value="Double Portion" data-price="3.00">Double Portion (+$3.00)</option>
-                                        <option value="Triple Portion" data-price="5.00">Triple Portion (+$5.00)</option>
-                                    </select>
-                                </div>
-                                
-                                <div class="add-on-select-group">
-                                    <label for="extras">Extra Toppings:</label>
-                                    <select id="extras" class="add-on-select">
-                                        <option value="">No extras</option>
-                                        <option value="Extra Cheese" data-price="1.50">Extra Cheese (+$1.50)</option>
-                                        <option value="Premium Toppings" data-price="2.00">Premium Toppings (+$2.00)</option>
-                                    </select>
-                                </div>
-                                
-                                <div class="special-instructions-group">
-                                    <label for="special-instructions">Special Instructions:</label>
-                                    <textarea id="special-instructions" class="special-instructions" 
-                                              placeholder="Enter any special instructions or requests..."></textarea>
-                                </div>
-                            </div>
-                            <div class="add-ons-buttons">
-                                <button onclick="confirmAddOns(this)">Confirm</button>
-                                <button onclick="closeAddOns(this)">Cancel</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="swiper-slide">
+              <div class="client__card">
+                <p>
+                  FoodyCMR has become my go-to for all my catering needs. Their
+                  attention to detail and exceptional customer service make
+                  every event a success.
+                </p>
+                <img src="assets/client-3.jpg" alt="client" />
+                <h4>Michael Thompson</h4>
+                <h5>Event Planner</h5>
+              </div>
             </div>
+          </div>
+          <!-- If we need pagination -->
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
 
-            <div id="desserts" class="category">
-                <h3>Desserts</h3>
-                <div class="menu-item">
-                    <img src="chocolate_cake.jpg" alt="Chocolate Cake" onclick="openModal(this)" onerror="handleImageError(this)">
-                    <h4>Chocolate Cake</h4>
-                    <p>Description: Rich chocolate cake with layers of ganache.</p>
-                    <p>Price: $6.00</p>
-                    <button onclick="addToCart('Chocolate Cake')">Add to Cart</button>
-                    <button onclick="showAddOns(this)" class="add-ons-btn">Add-ons</button>
-                    <div class="add-ons-modal">
-                        <div class="add-ons-content">
-                            <h5>Select Add-ons</h5>
-                            <div class="add-ons-options">
-                                <div class="add-on-select-group">
-                                    <label for="sauce">Sauce Options:</label>
-                                    <select id="sauce" class="add-on-select">
-                                        <option value="">No extra sauce</option>
-                                        <option value="Extra Sauce" data-price="1.00">Extra Sauce (+$1.00)</option>
-                                        <option value="Special Sauce" data-price="1.50">Special Sauce (+$1.50)</option>
-                                    </select>
-                                </div>
-                                
-                                <div class="add-on-select-group">
-                                    <label for="portion">Portion Size:</label>
-                                    <select id="portion" class="add-on-select">
-                                        <option value="">Regular portion</option>
-                                        <option value="Double Portion" data-price="3.00">Double Portion (+$3.00)</option>
-                                        <option value="Triple Portion" data-price="5.00">Triple Portion (+$5.00)</option>
-                                    </select>
-                                </div>
-                                
-                                <div class="add-on-select-group">
-                                    <label for="extras">Extra Toppings:</label>
-                                    <select id="extras" class="add-on-select">
-                                        <option value="">No extras</option>
-                                        <option value="Extra Cheese" data-price="1.50">Extra Cheese (+$1.50)</option>
-                                        <option value="Premium Toppings" data-price="2.00">Premium Toppings (+$2.00)</option>
-                                    </select>
-                                </div>
-                                
-                                <div class="special-instructions-group">
-                                    <label for="special-instructions">Special Instructions:</label>
-                                    <textarea id="special-instructions" class="special-instructions" 
-                                              placeholder="Enter any special instructions or requests..."></textarea>
-                                </div>
-                            </div>
-                            <div class="add-ons-buttons">
-                                <button onclick="confirmAddOns(this)">Confirm</button>
-                                <button onclick="closeAddOns(this)">Cancel</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <img src="fruit_tart.jpg" alt="Fruit Tart" onclick="openModal(this)" onerror="handleImageError(this)">
-                    <h4>Fruit Tart</h4>
-                    <p>Description: A buttery crust with fresh fruit and custard.</p>
-                    <p>Price: $5.50</p>
-                    <button onclick="addToCart('Fruit Tart')">Add to Cart</button>
-                    <button onclick="showAddOns(this)" class="add-ons-btn">Add-ons</button>
-                    <div class="add-ons-modal">
-                        <div class="add-ons-content">
-                            <h5>Select Add-ons</h5>
-                            <div class="add-ons-options">
-                                <div class="add-on-select-group">
-                                    <label for="sauce">Sauce Options:</label>
-                                    <select id="sauce" class="add-on-select">
-                                        <option value="">No extra sauce</option>
-                                        <option value="Extra Sauce" data-price="1.00">Extra Sauce (+$1.00)</option>
-                                        <option value="Special Sauce" data-price="1.50">Special Sauce (+$1.50)</option>
-                                    </select>
-                                </div>
-                                
-                                <div class="add-on-select-group">
-                                    <label for="portion">Portion Size:</label>
-                                    <select id="portion" class="add-on-select">
-                                        <option value="">Regular portion</option>
-                                        <option value="Double Portion" data-price="3.00">Double Portion (+$3.00)</option>
-                                        <option value="Triple Portion" data-price="5.00">Triple Portion (+$5.00)</option>
-                                    </select>
-                                </div>
-                                
-                                <div class="add-on-select-group">
-                                    <label for="extras">Extra Toppings:</label>
-                                    <select id="extras" class="add-on-select">
-                                        <option value="">No extras</option>
-                                        <option value="Extra Cheese" data-price="1.50">Extra Cheese (+$1.50)</option>
-                                        <option value="Premium Toppings" data-price="2.00">Premium Toppings (+$2.00)</option>
-                                    </select>
-                                </div>
-                                
-                                <div class="special-instructions-group">
-                                    <label for="special-instructions">Special Instructions:</label>
-                                    <textarea id="special-instructions" class="special-instructions" 
-                                              placeholder="Enter any special instructions or requests..."></textarea>
-                                </div>
-                            </div>
-                            <div class="add-ons-buttons">
-                                <button onclick="confirmAddOns(this)">Confirm</button>
-                                <button onclick="closeAddOns(this)">Cancel</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <img src="ice_cream_sundae.jpg" alt="Ice Cream Sundae" onclick="openModal(this)" onerror="handleImageError(this)">
-                    <h4>Ice Cream Sundae</h4>
-                    <p>Description: Vanilla ice cream with chocolate syrup and sprinkles.</p>
-                    <p>Price: $4.00</p>
-                    <button onclick="addToCart('Ice Cream Sundae')">Add to Cart</button>
-                    <button onclick="showAddOns(this)" class="add-ons-btn">Add-ons</button>
-                    <div class="add-ons-modal">
-                        <div class="add-ons-content">
-                            <h5>Select Add-ons</h5>
-                            <div class="add-ons-options">
-                                <div class="add-on-select-group">
-                                    <label for="sauce">Sauce Options:</label>
-                                    <select id="sauce" class="add-on-select">
-                                        <option value="">No extra sauce</option>
-                                        <option value="Extra Sauce" data-price="1.00">Extra Sauce (+$1.00)</option>
-                                        <option value="Special Sauce" data-price="1.50">Special Sauce (+$1.50)</option>
-                                    </select>
-                                </div>
-                                
-                                <div class="add-on-select-group">
-                                    <label for="portion">Portion Size:</label>
-                                    <select id="portion" class="add-on-select">
-                                        <option value="">Regular portion</option>
-                                        <option value="Double Portion" data-price="3.00">Double Portion (+$3.00)</option>
-                                        <option value="Triple Portion" data-price="5.00">Triple Portion (+$5.00)</option>
-                                    </select>
-                                </div>
-                                
-                                <div class="add-on-select-group">
-                                    <label for="extras">Extra Toppings:</label>
-                                    <select id="extras" class="add-on-select">
-                                        <option value="">No extras</option>
-                                        <option value="Extra Cheese" data-price="1.50">Extra Cheese (+$1.50)</option>
-                                        <option value="Premium Toppings" data-price="2.00">Premium Toppings (+$2.00)</option>
-                                    </select>
-                                </div>
-                                
-                                <div class="special-instructions-group">
-                                    <label for="special-instructions">Special Instructions:</label>
-                                    <textarea id="special-instructions" class="special-instructions" 
-                                              placeholder="Enter any special instructions or requests..."></textarea>
-                                </div>
-                            </div>
-                            <div class="add-ons-buttons">
-                                <button onclick="confirmAddOns(this)">Confirm</button>
-                                <button onclick="closeAddOns(this)">Cancel</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <footer class="footer" id="contact">
+      <div class="section_container footer_container">
+        <div class="footer__col">
+          <div class="logo footer__logo">
+            <a href="#">Foody<span>CMR</span></a>
+          </div>
+          <p class="section__description">
+            Embark on a gastronomic journey with FoodyCMR, where every bite tells
+            a story about the Cameroonian tradition and every dish is crafted to perfection.
+          </p>
+        </div>
+        <div class="footer__col">
+          <h4>Product</h4>
+          <ul class="footer__links">
+            <li><a href="#">Menu</a></li>
+            <li><a href="#">Specials</a></li>
+            <li><a href="#">Meal Deals</a></li>
+            <li><a href="#">Catering Options</a></li>
+            <li><a href="#">Seasonal Offerings</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Information</h4>
+          <ul class="footer__links">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Nutrition Information</a></li>
+            <li><a href="#">Allergen Information</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Company</h4>
+          <ul class="footer__links">
+            <li><a href="#">Our Story</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bar">
+        Copyright © 2024 Web_Dev group1. All rights reserved.
+      </div>
+    </footer>
 
-       
-    <!-- The Modal -->
-    <div id="myModal" class="modal" role="dialog" aria-label="Image preview">
-        <span class="close" onclick="closeModal()" aria-label="Close image preview">&times;</span>
-        <img class="modal-content" id="modalImage" alt="">
-        <div id="caption" role="status"></div>
-    </div>
-
-    <script>
-        // Open the Modal
-        function openModal(element) {
-            const modal = document.getElementById('myModal');
-            const modalImage = document.getElementById('modalImage');
-            
-            document.body.classList.add('modal-open');
-            modal.style.display = "block";
-            modalImage.src = element.src;
-            modalImage.alt = element.alt;
-            document.getElementById('caption').innerText = element.alt;
-            
-            // Set focus to modal
-            modal.focus();
-            
-            // Trap focus within modal
-            modal.addEventListener('keydown', trapFocus);
-        }
-
-        // Close the Modal
-        function closeModal() {
-            const modal = document.getElementById('myModal');
-            document.body.classList.remove('modal-open');
-            modal.style.display = "none";
-            
-            // Remove focus trap
-            modal.removeEventListener('keydown', trapFocus);
-        }
-
-        function trapFocus(e) {
-            const modal = document.getElementById('myModal');
-            const focusableElements = modal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
-            const firstFocusableElement = focusableElements[0];
-            const lastFocusableElement = focusableElements[focusableElements.length - 1];
-
-            if (e.key === 'Tab') {
-                if (e.shiftKey) {
-                    if (document.activeElement === firstFocusableElement) {
-                        lastFocusableElement.focus();
-                        e.preventDefault();
-                    }
-                } else {
-                    if (document.activeElement === lastFocusableElement) {
-                        firstFocusableElement.focus();
-                        e.preventDefault();
-                    }
-                }
-            }
-        }
-
-        // Add this in the script section
-        function searchMenu() {
-            const searchInput = document.getElementById('search').value.toLowerCase().trim();
-            const menuItems = document.querySelectorAll('.menu-item');
-            const categories = document.querySelectorAll('.category');
-            
-            categories.forEach(category => {
-                let hasVisibleItems = false;
-                const items = category.querySelectorAll('.menu-item');
-                
-                items.forEach(item => {
-                    const itemName = item.querySelector('h4').textContent.toLowerCase();
-                    const itemDescription = item.querySelector('p').textContent.toLowerCase();
-                    const isVisible = itemName.includes(searchInput) || itemDescription.includes(searchInput);
-                    item.style.display = isVisible ? 'block' : 'none';
-                    if (isVisible) hasVisibleItems = true;
-                });
-                
-                category.style.display = hasVisibleItems ? 'block' : 'none';
-            });
-        }
-
-        // Add this in the script section
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                closeModal();
-            }
-        });
-
-        // Add cart functionality
-        function addToCart(itemName) {
-            try {
-                let cart = [];
-                const existingCart = localStorage.getItem('cart');
-                
-                if (existingCart) {
-                    cart = JSON.parse(existingCart);
-                }
-                
-                cart.push({
-                    name: itemName,
-                    timestamp: new Date().toISOString()
-                });
-                
-            localStorage.setItem('cart', JSON.stringify(cart));
-            alert(`${itemName} added to cart!`);
-            } catch (error) {
-                console.error('Error adding item to cart:', error);
-                alert('Sorry, there was an error adding the item to cart. Please try again.');
-            }
-        }
-
-        // Add this to your existing script section
-        function handleImageError(img) {
-            if (!img.dataset.fallbackAttempted) {
-                img.dataset.fallbackAttempted = true;
-                img.src = 'placeholder.jpg';
-                img.alt = 'Image not available';
-                img.onerror = null; // Prevent infinite loop if placeholder also fails
-            }
-        }
-
-        // Background image slideshow
-        function initBackgroundSlideshow() {
-            const images = document.querySelectorAll('.background-image');
-            let currentImageIndex = 0;
-
-            function switchImage() {
-                // Remove active class from all images
-                images.forEach(img => img.classList.remove('active'));
-                
-                // Add active class to next image
-                currentImageIndex = (currentImageIndex + 1) % images.length;
-                images[currentImageIndex].classList.add('active');
-            }
-
-            // Switch image every 5 seconds
-            setInterval(switchImage, 5000);
-        }
-
-        // Initialize the slideshow when the page loads
-        window.addEventListener('load', initBackgroundSlideshow);
-
-        // Add these updated functions to your script section
-        function confirmAddOns(button) {
-            const menuItem = button.closest('.menu-item');
-            const itemName = menuItem.querySelector('h4').textContent;
-            const addOns = [];
-            
-            // Get values from all select elements
-            const selects = menuItem.querySelectorAll('.add-on-select');
-            selects.forEach(select => {
-                if (select.value) {
-                    const option = select.options[select.selectedIndex];
-                    const price = option.dataset.price;
-                    addOns.push(`${select.value} (+$${price})`);
-                }
-            });
-            
-            // Get special instructions
-            const instructions = menuItem.querySelector('.special-instructions').value;
-            if (instructions.trim()) {
-                addOns.push(`Special Instructions: ${instructions}`);
-            }
-            
-            // Add to cart with add-ons
-            let cart = [];
-            const existingCart = localStorage.getItem('cart');
-            
-            if (existingCart) {
-                cart = JSON.parse(existingCart);
-            }
-            
-            cart.push({
-                name: itemName,
-                addOns: addOns,
-                timestamp: new Date().toISOString()
-            });
-            
-            localStorage.setItem('cart', JSON.stringify(cart));
-            
-            // Show confirmation with selected add-ons
-            let message = `${itemName} added to cart`;
-            if (addOns.length > 0) {
-                message += ` with:\n- ${addOns.join('\n- ')}`;
-            }
-            alert(message);
-            
-            // Close the modal
-            closeAddOns(button);
-        }
-
-        function showAddOns(button) {
-            const menuItem = button.closest('.menu-item');
-            const modal = menuItem.querySelector('.add-ons-modal');
-            modal.style.display = 'block';
-            
-            // Reset all selections
-            const selects = modal.querySelectorAll('select');
-            selects.forEach(select => select.selectedIndex = 0);
-            
-            const textarea = modal.querySelector('.special-instructions');
-            textarea.value = '';
-        }
-
-        function closeAddOns(button) {
-            const modal = button.closest('.add-ons-modal');
-            modal.style.display = 'none';
-        }
-    </script>
-</body>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="main.js"></script>
+  </body>
 </html>
