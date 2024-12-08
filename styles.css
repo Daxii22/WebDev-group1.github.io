@@ -401,13 +401,13 @@ nav {
 }
 
 .chef__list li:nth-child(1) span {
-  color: #62b15c;
+  color: green;
 }
 .chef__list li:nth-child(2) span {
-  color: #ff3e67;
+  color: red;
 }
 .chef__list li:nth-child(3) span {
-  color: #185adb;
+  color: yellow;
 }
 
 .client__container {
