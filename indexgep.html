@@ -3,39 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
     <title>Restaurant Reservation</title>
-    <link rel="stylesheet" href="group.css">
+   
 </head>
 <body>
-    <header class="header">
-        <h1>Restaurant Name</h1>
-        <nav class="navbar">
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#reservation">Reservation</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <nav>
+        <div class="nav__header">
+          <div class="logo nav__logo">
+            <a href="#">Foody<span>CMR.</span></a>
+          </div>
+          <div class="nav_menu_btn" id="menu-btn">
+            <span><i class="ri-menu-line"></i></span>
+          </div>
+        </div>
+        <ul class="nav__links" id="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#special">Menu</a></li>
+          <li><a href="indexgep.html">Reservations</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
     
     <section id="reservation" class="reservation-section">
         <h2>Make a Reservation</h2>
-        <form id="reservationForm">
+        <form id="reservationF">
             <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
+            <input type="text" id="name" name="name" required><br><br>
 
             <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+            <input type="email" id="email" name="email" required><br><br>
 
             <label for="date">Date:</label>
-            <input type="date" id="date" name="date" required>
+            <input type="date" id="date" name="date" required><br><br>
 
             <label for="time">Time:</label>
-            <input type="time" id="time" name="time" required>
+            <input type="time" id="time" name="time" required><br><br>
 
             <label for="guests">Number of Guests:</label>
-            <input type="number" id="guests" name="guests" min="1" required>
+            <input type="number" id="guests" name="guests" min="1" required><br><br>
 
             <button type="submit">Reserve Now</button>
         </form>
