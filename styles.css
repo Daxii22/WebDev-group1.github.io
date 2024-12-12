@@ -778,7 +778,63 @@ nav {
 #reservationF{
   margin-top: 30px;
   border-radius: 5px;
-  background-color:  #fc7f09; 
+  background-color: ivory; 
   width: 50%;
-  height: 300px;
+  height: 260px;
+}
+/* styling for the order */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: ivory;
+  height: 50px;
+  margin: 0;
+  padding: 20px;
+}
+.container {
+  max-width: 600px;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h1 {
+  text-align: center;
+  color: #333;
+}
+label {
+  display: block;
+  margin: 10px 0 5px;
+}
+input, select, textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+button {
+  background-color: #cc7511;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+}
+button:hover {
+  background-color: #af640e;
+}
+.cart {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #6e6b67;
+  border-radius: 4px;
+  background-color: #af640e;
+  display: none;
+} 
+.success {
+  color: greenyellow;
+  margin-top: 10px;
 }

@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="style3.css" />
+    <title>FoodyCMR</title>
+  </head>
+  <body>
+    <nav>
+      <div class="nav__header">
+        <div class="logo nav__logo">
+          <a href="#">Foody<span>CMR.</span></a>
+        </div>
+        <div class="nav_menu_btn" id="menu-btn">
+          <span><i class="ri-menu-line"></i></span>
+        </div>
+      </div>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="order.html">Order</a></li>
+        <li><a href="indexgep.html">Reservations</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+      <div class="nav__btn">
+        <button class="btn"><img src="images\restaurant-line.png"></button>
+      </div>
+    </nav>
+
+    <header class="section_container header_container" id="home">
+      </div>
+    <div class="background-slideshow">
+        <img src="pexels-jozef-fusung-2567636-4167234.jpg" alt="Background" class="background-image">
+        <img src="pexels-kunal-lakhotia-781256899-29631459.jpg" alt="Background" class="background-image">
+       <!--  <img src="image9.JPG" alt="Background" class="background-image">-->
+    </div>
+
+    <div class="content-wrapper">
+        <header>
+            <div class="header-top">
+                <!--<h1>Restaurant Name</h1>
+            -->
+                <form role="search" class="search-container" onsubmit="event.preventDefault(); searchMenu();">
+                    <input type="text" 
+                           id="search" 
+                           name="search" 
+                           aria-label="Search menu items"
+                           onkeyup="searchMenu()" 
+                           placeholder="Search menu items...">
+                    <button type="submit" class="search-button" aria-label="Search">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                            <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+            <nav aria-label="Main navigation">
+               
+            </nav>
+        </header>
+
+        <section id="menu" aria-label="Restaurant Menu">
+            <h2>Menu</h2>
+            <div id="appetizers" class="category">
+                <h3>Appetizers</h3>
+                <div class="menu-item">
+                    <img src="pexels-one-click-445040244-29617469.jpg" alt="Spring Rolls" onclick="openModal(this)" onerror="handleImageError(this)">
+                    <img src="pexels-valeriya-29653203.jpg" alt="Spring Rolls" onclick="openModal(this)" onerror="handleImageError(this)">
+                    <h4>Spring Rolls</h4>
+                    <p>Description: Crispy rolls with vegetables.</p>
+                    <p>Price: XAF5000.00</p>
+                    <button onclick="addToCart('Spring Rolls')">Add to Cart</button>
+                    <button onclick="showAddOns(this)" class="add-ons-btn">Add-ons</button>
+                    <div class="add-ons-modal">
+                        <div class="add-ons-content">
+                            <h5>Select Add-ons</h5>
+                            <div class="add-ons-options">
+                                <div class="add-on-select-group">
+                                    <label for="sauce">Sauce Options:</label>
+                                    <select id="sauce" class="add-on-select">
+                                        <option value="">No extra sauce</option>
+                                        <option value="Extra Sauce" data-price="1.00">Extra Sauce (+$1.00)</option>
+                                        <option value="Special Sauce" data-price="1.50">Special Sauce (+$1.50)</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="add-on-select-group">
+                                    <label for="portion">Portion Size:</label>
+                                    <select id="portion" class="add-on-select">
+                                        <option value="">Regular portion</option>
+                                        <option value="Double Portion" data-price="3.00">Double Portion (+$3.00)</option>
+                                        <option value="Triple Portion" data-price="5.00">Triple Portion (+$5.00)</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="add-on-select-group">
+                                    <label for="extras">Extra Toppings:</label>
+                                    <select id="extras" class="add-on-select">
+                                        <option value="">No extras</option>
+                                        <option value="Extra Cheese" data-price="1.50">Extra Cheese (+$1.50)</option>
+                                        <option value="Premium Toppings" data-price="2.00">Premium Toppings (+$2.00)</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="special-instructions-group">
+                                    <label for="special-instructions">Special Instructions:</label>
+                                    <textarea id="special-instructions" class="special-instructions" 
+                                              placeholder="Enter any special instructions or requests..."></textarea>
+                                </div>
+                            </div>
+                            <div class="add-ons-buttons">
+                                <button onclick="confirmAddOns(this)">Confirm</button>
+                                <button onclick="closeAddOns(this)">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    
+                    <img src="image9.jpg" alt="Garlic Bread" onclick="openModal(this)" onerror="handleImageError(this)">
+                    <img src="image9.jpg" alt="Garlic Bread" onclick="openModal(this)" onerror="handleImageError(this)">
+                    <img src="image9.jpg" alt="Garlic Bread" onclick="openModal(this)" onerror="handleImageError(this)">
+                    <img src="garlic_bread.jpg" alt="Garlic Bread" onclick="openModal(this)" onerror="handleImageError(this)">
+                    <h4>Garlic Bread</h4>
+                    <p>Description: Toasted bread with garlic butter.</p>
+                    <p>Price: XAF5000.50</p>
+                    <button onclick="addToCart('Garlic Bread')">Add to Cart</button>
+                    <button onclick="showAddOns(this)" class="add-ons-btn">Add-ons</button>
+                    <div class="add-ons-modal">
+                        <div class="add-ons-content">
+                            <h5>Select Add-ons</h5>
+                            <div class="add-ons-options">
+                                <div class="add-on-select-group">
+                                    <label for="sauce">Sauce Options:</label>
+                                    <select id="sauce" class="add-on-select">
+                                        <option value="">No extra sauce</option>
+                                        <option value="Extra Sauce" data-price="1.00">Extra Sauce (+$1.00)</option>
+                                        <option value="Special Sauce" data-price="1.50">Special Sauce (+$1.50)</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="add-on-select-group">
+                                    <label for="portion">Portion Size:</label>
+                                    <select id="portion" class="add-on-select">
+                                        <option value="">Regular portion</option>
+                                        <option value="Double Portion" data-price="3.00">Double Portion (+$3.00)</option>
+                                        <option value="Triple Portion" data-price="5.00">Triple Portion (+$5.00)</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="add-on-select-group">
+                                    <label for="extras">Extra Toppings:</label>
+                                    <select id="extras" class="add-on-select">
+                                        <option value="">No extras</option>
+                                        <option value="Extra Cheese" data-price="1.50">Extra Cheese (+$1.50)</option>
+                                        <option value="Premium Toppings" data-price="2.00">Premium Toppings (+$2.00)</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="special-instructions-group">
+                                    <label for="special-instructions">Special Instructions:</label>
+                                    <textarea id="special-instructions" class="special-instructions" 
+                                              placeholder="Enter any special instructions or requests..."></textarea>
+                                </div>
+                            </div>
+                            <div class="add-ons-buttons">
+                                <button onclick="confirmAddOns(this)">Confirm</button>
+                                <button onclick="closeAddOns(this)">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="pexels-nadin-sh-78971847-19295809.jpg" alt="Caprese Salad" onclick="openModal(this)" onerror="handleImageError(this)">
+                    <img src="pexels-pixabay-144239.jpg" alt="Caprese Salad" onclick="openModal(this)" onerror="handleImageError(this)">
+                    <h4>Caprese Salad</h4>
+                    <p>Description: Fresh tomatoes, mozzarella, and basil.</p>
+                    <p>Price: XAF3000.00</p>
+                    <button onclick="addToCart('Caprese Salad')">Add to Cart</button>
+                    <button onclick="showAddOns(this)" class="add-ons-btn">Add-ons</button>
+                    <div class="add-ons-modal">
+                        <div class="add-ons-content">
+                            <h5>Select Add-ons</h5>
+                            <div class="add-ons-options">
+                                <div class="add-on-select-group">
+                                    <label for="sauce">Sauce Options:</label>
+                                    <select id="sauce" class="add-on-select">
+                                        <option value="">No extra sauce</option>
+                                        <option value="Extra Sauce" data-price="1.00">Extra Sauce (+$1.00)</option>
+                                        <option value="Special Sauce" data-price="1.50">Special Sauce (+$1.50)</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="add-on-select-group">
+                                    <label for="portion">Portion Size:</label>
+                                    <select id="portion" class="add-on-select">
+                                        <option value="">Regular portion</option>
+                                        <option value="Double Portion" data-price="3.00">Double Portion (+$3.00)</option>
+                                        <option value="Triple Portion" data-price="5.00">Triple Portion (+$5.00)</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="add-on-select-group">
+                                    <label for="extras">Extra Toppings:</label>
+                                    <select id="extras" class="add-on-select">
+                                        <option value="">No extras</option>
+                                        <option value="Extra Cheese" data-price="1.50">Extra Cheese (+$1.50)</option>
+                                        <option value="Premium Toppings" data-price="2.00">Premium Toppings (+$2.00)</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="special-instructions-group">
+                                    <label for="special-instructions">Special Instructions:</label>
+                                    <textarea id="special-instructions" class="special-instructions" 
+                                              placeholder="Enter any special instructions or requests..."></textarea>
+                                </div>
+                            </div>
+                            <div class="add-ons-buttons">
+                                <button onclick="confirmAddOns(this)">Confirm</button>
+                                <button onclick="closeAddOns(this)">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="entrees" class="category">
+                <h3>Entrees</h3>
+                <div class="menu-item">
+                    <img src="pexels-h-nh-nguy-n-1719815172-27953852.jpg" alt="Grilled Chicken" onclick="openModal(this)" onerror="handleImageError(this)">
+                    <img src="pexels-kun-fayakun-1238181416-23147806.jpg" alt="Grilled Chicken" onclick="openModal(this)" onerror="handleImageError(this)">
+                    <h4>Grilled Chicken</h4>
+                    <p>Description: Juicy grilled chicken with herbs.</p>
+                    <p>Price: XAF4000.00</p>
+                    <button onclick="addToCart('Grilled Chicken')">Add to Cart</button>
+                    <button onclick="showAddOns(this)" class="add-ons-btn">Add-ons</button>
+                    <div class="add-ons-modal">
+                        <div class="add-ons-content">
+                            <h5>Select Add-ons</h5>
+                            <div class="add-ons-options">
+                                <div class="add-on-select-group">
+                                    <label for="sauce">Sauce Options:</label>
+                                    <select id="sauce" class="add-on-select">
+                                        <option value="">No extra sauce</option>
+                                        <option value="Extra Sauce" data-price="1.00">Extra Sauce (+$1.00)</option>
+                                        <option value="Special Sauce" data-price="1.50">Special Sauce (+$1.50)</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="add-on-select-group">
+                                    <label for="portion">Portion Size:</label>
+                                    <select id="portion" class="add-on-select">
+                                        <option value="">Regular portion</option>
+                                        <option value="Double Portion" data-price="3.00">Double Portion (+$3.00)</option>
+                                        <option value="Triple Portion" data-price="5.00">Triple Portion (+$5.00)</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="add-on-select-group">
+                                    <label for="extras">Extra Toppings:</label>
+                                    <select id="extras" class="add-on-select">
+                                        <option value="">No extras</option>
+                                        <option value="Extra Cheese" data-price="1.50">Extra Cheese (+$1.50)</option>
+                                        <option value="Premium Toppings" data-price="2.00">Premium Toppings (+$2.00)</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="special-instructions-group">
+                                    <label for="special-instructions">Special Instructions:</label>
+                                    <textarea id="special-instructions" class="special-instructions" 
+                                              placeholder="Enter any special instructions or requests..."></textarea>
+                                </div>
+                            </div>
+                            <div class="add-ons-buttons">
+                                <button onclick="confirmAddOns(this)">Confirm</button>
+                                <button onclick="closeAddOns(this)">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="pexels-alesiakozik-6065919.jpg" alt="Grilled Chicken" onclick="openModal(this)" onerror="handleImageError(this)">
+                    <img src="pexels-kleine-beyers-583643-2181151.jpg" alt="Grilled Chicken" onclick="openModal(this)" onerror="handleImageError(this)">
+                    
+                    
+                    <h4>Beef Stir Fry</h4>
+                    <p>Description: Tender beef with vegetables in a savory sauce.</p>
+                    <p>Price: XAF5500.00</p>
+                    <button onclick="addToCart('Beef Stir Fry')">Add to Cart</button>
+                    <button onclick="showAddOns(this)" class="add-ons-btn">Add-ons</button>
+                    <div class="add-ons-modal">
+                        <div class="add-ons-content">
+                            <h5>Select Add-ons</h5>
+                            <div class="add-ons-options">
+                                <div class="add-on-select-group">
+                                    <label for="sauce">Sauce Options:</label>
+                                    <select id="sauce" class="add-on-select">
+                                        <option value="">No extra sauce</option>
+                                        <option value="Extra Sauce" data-price="1.00">Extra Sauce (+$1.00)</option>
+                                        <option value="Special Sauce" data-price="1.50">Special Sauce (+$1.50)</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="add-on-select-group">
+                                    <label for="portion">Portion Size:</label>
+                                    <select id="portion" class="add-on-select">
+                                        <option value="">Regular portion</option>
+                                        <option value="Double Portion" data-price="3.00">Double Portion (+$3.00)</option>
+                                        <option value="Triple Portion" data-price="5.00">Triple Portion (+$5.00)</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="add-on-select-group">
+                                    <label for="extras">Extra Toppings:</label>
+                                    <select id="extras" class="add-on-select">
+                                        <option value="">No extras</option>
+                                        <option value="Extra Cheese" data-price="1.50">Extra Cheese (+$1.50)</option>
+                                        <option value="Premium Toppings" data-price="2.00">Premium Toppings (+$2.00)</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="special-instructions-group">
+                                    <label for="special-instructions">Special Instructions:</label>
+                                    <textarea id="special-instructions" class="special-instructions" 
+                                              placeholder="Enter any special instructions or requests..."></textarea>
+                                </div>
+                            </div>
+                            <div class="add-ons-buttons">
+                                <button onclick="confirmAddOns(this)">Confirm</button>
+                                <button onclick="closeAddOns(this)">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item">
+            
+                    
+                    <h4>Vegetarian Pasta</h4>
+                    <p>Description: Penne with seasonal vegetables in marinara sauce.</p>
+                    <p>Price: XAF3000.00</p>
+                    <button onclick="addToCart('Vegetarian Pasta')">Add to Cart</button>
+                    <button onclick="showAddOns(this)" class="add-ons-btn">Add-ons</button>
+                    <div class="add-ons-modal">
+                        <div class="add-ons-content">
+                            <h5>Select Add-ons</h5>
+                            <div class="add-ons-options">
+                                <div class="add-on-select-group">
+                                    <label for="sauce">Sauce Options:</label>
+                                    <select id="sauce" class="add-on-select">
+                                        <option value="">No extra sauce</option>
+                                        <option value="Extra Sauce" data-price="1.00">Extra Sauce (+$1.00)</option>
+                                        <option value="Special Sauce" data-price="1.50">Special Sauce (+$1.50)</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="add-on-select-group">
+                                    <label for="portion">Portion Size:</label>
+                                    <select id="portion" class="add-on-select">
+                                        <option value="">Regular portion</option>
+                                        <option value="Double Portion" data-price="3.00">Double Portion (+$3.00)</option>
+                                        <option value="Triple Portion" data-price="5.00">Triple Portion (+$5.00)</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="add-on-select-group">
+                                    <label for="extras">Extra Toppings:</label>
+                                    <select id="extras" class="add-on-select">
+                                        <option value="">No extras</option>
+                                        <option value="Extra Cheese" data-price="1.50">Extra Cheese (+$1.50)</option>
+                                        <option value="Premium Toppings" data-price="2.00">Premium Toppings (+$2.00)</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="special-instructions-group">
+                                    <label for="special-instructions">Special Instructions:</label>
+                                    <textarea id="special-instructions" class="special-instructions" 
+                                              placeholder="Enter any special instructions or requests..."></textarea>
+                                </div>
+                            </div>
+                            <div class="add-ons-buttons">
+                                <button onclick="confirmAddOns(this)">Confirm</button>
+                                <button onclick="closeAddOns(this)">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="desserts" class="category">
+                <h3>Desserts</h3>
+                <div class="menu-item">
+                    <img src="pexels-vietrov-851029180-29625645.jpg" alt="Vegetarian Pasta" onclick="openModal(this)" onerror="handleImageError(this)">
+                    <img src="pexels-gabriel-gotti-559641432-16777905.jpg" alt="Grilled Chicken" onclick="openModal(this)" onerror="handleImageError(this)">
+                    
+                    <h4>Chocolate Cake</h4>
+                    <p>Description: Rich chocolate cake with layers of ganache.</p>
+                    <p>Price: XAF3000.00</p>
+                    <button onclick="addToCart('Chocolate Cake')">Add to Cart</button>
+                    <button onclick="showAddOns(this)" class="add-ons-btn">Add-ons</button>
+                    <div class="add-ons-modal">
+                        <div class="add-ons-content">
+                            <h5>Select Add-ons</h5>
+                            <div class="add-ons-options">
+                                <div class="add-on-select-group">
+                                    <label for="sauce">Sauce Options:</label>
+                                    <select id="sauce" class="add-on-select">
+                                        <option value="">No extra sauce</option>
+                                        <option value="Extra Sauce" data-price="1.00">Extra Sauce (+$1.00)</option>
+                                        <option value="Special Sauce" data-price="1.50">Special Sauce (+$1.50)</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="add-on-select-group">
+                                    <label for="portion">Portion Size:</label>
+                                    <select id="portion" class="add-on-select">
+                                        <option value="">Regular portion</option>
+                                        <option value="Double Portion" data-price="3.00">Double Portion (+$3.00)</option>
+                                        <option value="Triple Portion" data-price="5.00">Triple Portion (+$5.00)</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="add-on-select-group">
+                                    <label for="extras">Extra Toppings:</label>
+                                    <select id="extras" class="add-on-select">
+                                        <option value="">No extras</option>
+                                        <option value="Extra Cheese" data-price="1.50">Extra Cheese (+$1.50)</option>
+                                        <option value="Premium Toppings" data-price="2.00">Premium Toppings (+$2.00)</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="special-instructions-group">
+                                    <label for="special-instructions">Special Instructions:</label>
+                                    <textarea id="special-instructions" class="special-instructions" 
+                                              placeholder="Enter any special instructions or requests..."></textarea>
+                                </div>
+                            </div>
+                            <div class="add-ons-buttons">
+                                <button onclick="confirmAddOns(this)">Confirm</button>
+                                <button onclick="closeAddOns(this)">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="fruit_tart.jpg" alt="Fruit Tart" onclick="openModal(this)" onerror="handleImageError(this)">
+                    <h4>Fruit Tart</h4>
+                    <p>Description: A buttery crust with fresh fruit and custard.</p>
+                    <p>Price: XAF2500</p>
+                    <button onclick="addToCart('Fruit Tart')">Add to Cart</button>
+                    <button onclick="showAddOns(this)" class="add-ons-btn">Add-ons</button>
+                    <div class="add-ons-modal">
+                        <div class="add-ons-content">
+                            <h5>Select Add-ons</h5>
+                            <div class="add-ons-options">
+                                <div class="add-on-select-group">
+                                    <label for="sauce">Sauce Options:</label>
+                                    <select id="sauce" class="add-on-select">
+                                        <option value="">No extra sauce</option>
+                                        <option value="Extra Sauce" data-price="1.00">Extra Sauce (+$1.00)</option>
+                                        <option value="Special Sauce" data-price="1.50">Special Sauce (+$1.50)</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="add-on-select-group">
+                                    <label for="portion">Portion Size:</label>
+                                    <select id="portion" class="add-on-select">
+                                        <option value="">Regular portion</option>
+                                        <option value="Double Portion" data-price="3.00">Double Portion (+$3.00)</option>
+                                        <option value="Triple Portion" data-price="5.00">Triple Portion (+$5.00)</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="add-on-select-group">
+                                    <label for="extras">Extra Toppings:</label>
+                                    <select id="extras" class="add-on-select">
+                                        <option value="">No extras</option>
+                                        <option value="Extra Cheese" data-price="1.50">Extra Cheese (+$1.50)</option>
+                                        <option value="Premium Toppings" data-price="2.00">Premium Toppings (+$2.00)</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="special-instructions-group">
+                                    <label for="special-instructions">Special Instructions:</label>
+                                    <textarea id="special-instructions" class="special-instructions" 
+                                              placeholder="Enter any special instructions or requests..."></textarea>
+                                </div>
+                            </div>
+                            <div class="add-ons-buttons">
+                                <button onclick="confirmAddOns(this)">Confirm</button>
+                                <button onclick="closeAddOns(this)">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="pexels-valeriya-1028419(1).jpg" alt="Vegetarian Pasta" onclick="openModal(this)" onerror="handleImageError(this)">
+                    <img src="pexels-tara-winstead-7110162.jpg" alt="Grilled Chicken" onclick="openModal(this)" onerror="handleImageError(this)">
+                    
+                    <h4>Ice Cream Sundae</h4>
+                    <p>Description: Vanilla ice cream with chocolate syrup and sprinkles.</p>
+                    <p>Price: XAF3500.00</p>
+                    <button onclick="addToCart('Ice Cream Sundae')">Add to Cart</button>
+                    <button onclick="showAddOns(this)" class="add-ons-btn">Add-ons</button>
+                    <div class="add-ons-modal">
+                        <div class="add-ons-content">
+                            <h5>Select Add-ons</h5>
+                            <div class="add-ons-options">
+                                <div class="add-on-select-group">
+                                    <label for="sauce">Sauce Options:</label>
+                                    <select id="sauce" class="add-on-select">
+                                        <option value="">No extra sauce</option>
+                                        <option value="Extra Sauce" data-price="1.00">Extra Sauce (+$1.00)</option>
+                                        <option value="Special Sauce" data-price="1.50">Special Sauce (+$1.50)</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="add-on-select-group">
+                                    <label for="portion">Portion Size:</label>
+                                    <select id="portion" class="add-on-select">
+                                        <option value="">Regular portion</option>
+                                        <option value="Double Portion" data-price="3.00">Double Portion (+$3.00)</option>
+                                        <option value="Triple Portion" data-price="5.00">Triple Portion (+$5.00)</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="add-on-select-group">
+                                    <label for="extras">Extra Toppings:</label>
+                                    <select id="extras" class="add-on-select">
+                                        <option value="">No extras</option>
+                                        <option value="Extra Cheese" data-price="1.50">Extra Cheese (+$1.50)</option>
+                                        <option value="Premium Toppings" data-price="2.00">Premium Toppings (+$2.00)</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="special-instructions-group">
+                                    <label for="special-instructions">Special Instructions:</label>
+                                    <textarea id="special-instructions" class="special-instructions" 
+                                              placeholder="Enter any special instructions or requests..."></textarea>
+                                </div>
+                            </div>
+                            <div class="add-ons-buttons">
+                                <button onclick="confirmAddOns(this)">Confirm</button>
+                                <button onclick="closeAddOns(this)">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       
+    <!-- The Modal -->
+    <div id="myModal" class="modal" role="dialog" aria-label="Image preview">
+        <span class="close" onclick="closeModal()" aria-label="Close image preview">&times;</span>
+        <img class="modal-content" id="modalImage" alt="">
+        <div id="caption" role="status"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
